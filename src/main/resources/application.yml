@@ -1,0 +1,15 @@
+server:
+  port: 0
+
+spring:
+  application:
+    name: CasinoGame
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:${server.port}
+    register-with-eureka: false
+    fetch-registry: false
+  instance:
+    instance-id: ${spring.application.name}:${random.value}
